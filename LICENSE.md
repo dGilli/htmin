@@ -1,0 +1,5 @@
+Copyright © Dennis Gilli.
+
+This project is currently in early development and with [no license](https://choosealicense.com/no-permission/). If you are interested in using this project, please feel free to reach out to me ([github.com/dGilli](https://github.com/dGilli)). We can work together to reach a suitable agreement.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, INCLUDING SPECIAL, INCIDENTAL, AND CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
