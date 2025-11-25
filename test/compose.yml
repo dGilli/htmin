@@ -1,0 +1,14 @@
+services:
+  playwright:
+    build: .
+    links:
+      - exampleapp
+    volumes:
+      - ./test-results:/home/pwuser/test/test-results
+
+  exampleapp:
+    image: ${EXAMPLEAPP_IMAGE}
+    ports:
+      - 8080:80
+    volumes:
+      - ../example:/usr/share/nginx/html:ro

@@ -25,8 +25,15 @@ no-dirty:
 
 ## audit: run quality control checks
 .PHONY: audit
-audit:
+audit: test
 	docker scan $(image_name):$(image_tag)
+
+## test: run all tests
+.PHONY: test
+test:
+	EXAMPLEAPP_IMAGE=$(image_name):$(image_tag) COMPOSE_MENU=false \
+	docker compose -f test/compose.yml up --build --quiet-build --abort-on-container-exit \
+	2>&1 | grep -v 'exampleapp'
 
 # ==================================================================================== #
 # DEVELOPMENT
