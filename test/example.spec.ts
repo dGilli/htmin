@@ -1,18 +1,32 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('has title', async ({ page }) => {
-  await page.goto('http://exampleapp/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/HTMIN/);
+test("has title", async ({ page }) => {
+    await page.goto("http://exampleapp/");
+    await expect(page).toHaveTitle(/HTMIN/);
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test("includes work", async ({ page }) => {
+    await page.goto("http://exampleapp/");
+    await expect(page).toHaveTitle(/HTMIN/);
+});
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+test("contains a <footer> element", async ({ page }) => {
+    await page.goto("http://exampleapp");
+    const footer = await page.locator("footer");
+    await expect(footer).toHaveCount(1);
+});
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+test("files with _ prefix are not public", async ({ page }) => {
+    const response = await page.goto("http://exampleapp/_partial/footer");
+    expect(response.status()).toBe(404);
+});
+
+test("serve assets", async ({ page }) => {
+    const response = await page.goto("http://exampleapp/assets/favicon.ico");
+    expect(response.status()).toBe(200);
+});
+
+test("serve subpage", async ({ page }) => {
+    await page.goto("http://exampleapp/privacy");
+    await expect(page).toHaveTitle(/Privacy/);
 });

@@ -1,6 +1,11 @@
 image_name = dGilli/htmin
 image_tag = latest
 
+keep_alive_flag = --abort-on-container-exit 2>&1 | grep -v 'exampleapp'
+ifeq ($(keep_alive),true)
+	keep_alive_flag =
+endif
+
 # ==================================================================================== #
 # HELPERS
 # ==================================================================================== #
@@ -32,8 +37,7 @@ audit: test
 .PHONY: test
 test:
 	EXAMPLEAPP_IMAGE=$(image_name):$(image_tag) COMPOSE_MENU=false \
-	docker compose -f test/compose.yml up --build --quiet-build --abort-on-container-exit \
-	2>&1 | grep -v 'exampleapp'
+	docker compose -f test/compose.yml up --build --quiet-build $(keep_alive_flag)
 
 # ==================================================================================== #
 # DEVELOPMENT
