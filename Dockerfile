@@ -6,8 +6,8 @@ RUN apk add --no-cache nginx
 RUN mkdir -p /run/nginx /var/cache/nginx /var/log/nginx /etc/nginx/conf.d \
  && chown -R nginx:nginx /var/cache/nginx /var/log/nginx
 
-COPY head-tags.conf /etc/nginx/head-tags.conf
-COPY default.conf /etc/nginx/http.d/default.conf
+COPY nginx/head-tags.conf /etc/nginx/head-tags.conf
+COPY nginx/default.conf /etc/nginx/http.d/default.conf
 
 WORKDIR /usr/share/nginx/html
 
