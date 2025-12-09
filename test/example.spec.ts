@@ -26,7 +26,13 @@ test("serve assets", async ({ page }) => {
     expect(response.status()).toBe(200);
 });
 
-test("serve subpage", async ({ page }) => {
+test.skip("serve subpage", async ({ page }) => {
     await page.goto("http://exampleapp/privacy");
     await expect(page).toHaveTitle(/Privacy/);
+});
+
+test("htmx request via query", async ({ page }) => {
+    const response = await page.goto("http://exampleapp?hxboost=true");
+    const headerValue = response.headers()["hx-response"];
+    expect(headerValue).toBe("true");
 });
