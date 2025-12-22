@@ -36,7 +36,7 @@ audit: test
 ## test: run all tests
 .PHONY: test
 test:
-	EXAMPLEAPP_IMAGE=$(image_name):$(image_tag) COMPOSE_MENU=false \
+	EXAMPLEAPP_IMAGE=$(image_name):$(image_tag) EXAMPLEAPP_DIR=$(shell pwd)/example COMPOSE_MENU=false \
 	docker compose -f test/compose.yml up --build --quiet-build $(keep_alive_flag)
 
 # ==================================================================================== #

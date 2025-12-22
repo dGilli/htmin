@@ -11,4 +11,4 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ../example:/usr/share/nginx/html:ro
+      - ${EXAMPLEAPP_DIR}:/usr/share/nginx/html:ro
