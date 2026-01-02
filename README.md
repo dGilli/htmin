@@ -1,10 +1,10 @@
 # HTMIN
 
-A “framework in a box” based on [htmx](https://htmx.org/) and [NGINX](https://nginx.org/), all batteries included. The framework aims to provide a minimal and efficient way to create modern web applications with minimal overhead and no setup required.
+A “framework in a box” based on [htmx](https://htmx.org/) and [NGINX](https://nginx.org/), all batteries included. The framework aims to provide a minimal and efficient way to create modern web applications with zero overhead and no setup required.
 
 ## Features
 - **Dynamic Content Loading:** htmx to easily fetch and update parts of the web page without full page reloads.
-- **Lightweight Configuration:** Comprehensive NGINX setup for serving static files and handling requests.
+- **Lightweight Configuration:** Comprehensive NGINX setup for serving static files and handling htmx requests.
 - **Minimal Dependencies:** [Tailwind CSS](https://tailwindcss.com/) and [Alpine.js](https://alpinejs.dev/) for rapid UI development.
 - **Included CI/CD:** Opinionated integration and deployment scripts that guarantee consistent and reliable updates, and best performance in production (unimplemented!).
 
