@@ -28,7 +28,10 @@ Checkout the makefile or run `make help` for all predefined commands.
 
 [Playwright](https://playwright.dev/) is used to run End-to-end tests and guarantee behaviour. Run `make test` to execute all tests.
 
-If you want the example app to keep running after tests complete (for development), run:
+> [!NOTE]
+> Building the playwright image can take a some time the first it is run. Progress is not displayed to keep the output of consecutive runs cleaner. Run `docker build test` to get the progress.
+
+If you want the sample app to continue running after testing is complete (for development purposes), run:
 ```
 make test keep_alive=true
 ```
