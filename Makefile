@@ -24,6 +24,8 @@ confirm:
 no-dirty:
 	@test -z "$(shell git status --porcelain)"
 
+FORCE:
+
 # ==================================================================================== #
 # QUALITY CONTROL
 # ==================================================================================== #
@@ -38,6 +40,10 @@ audit: test
 test:
 	EXAMPLEAPP_IMAGE=$(image_name):$(image_tag) EXAMPLEAPP_DIR=$(shell pwd)/example COMPOSE_MENU=false \
 	docker compose -f test/compose.yml up --build --quiet-build $(keep_alive_flag)
+
+## test/%: run a single test file
+test/%: FORCE
+	export test_filter=$@; $(MAKE) test
 
 # ==================================================================================== #
 # DEVELOPMENT

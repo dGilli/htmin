@@ -10,4 +10,4 @@ RUN echo "alias playwright='npx playwright'" >> ~/.bashrc
 
 COPY . .
 
-CMD ["npx", "playwright", "test"]
+CMD npx playwright test "$test_filter"

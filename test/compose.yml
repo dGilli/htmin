@@ -1,6 +1,9 @@
 services:
   playwright:
     build: .
+    environment:
+      - base_url
+      - test_filter
     links:
       - exampleapp
     volumes:
