@@ -5,7 +5,7 @@ test("files with _ prefix are not public", async ({ page }) => {
     expect(response.status()).toBe(404);
 });
 
-test.skip("serve subpage", async ({ page }) => {
+test("serve subpage", async ({ page }) => {
     await page.goto("/privacy");
     await expect(page).toHaveTitle(/Privacy/);
 });
